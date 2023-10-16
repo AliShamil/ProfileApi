@@ -94,6 +94,10 @@ namespace ProfileApi
         public static IServiceCollection AddMyContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<AppDbContext>(op => op.UseSqlServer(configuration.GetConnectionString("Default")));
+            var cosmos = new CosmosConfig();
+            configuration.GetSection("Cosmos").Bind(cosmos);
+
+            services.AddDbContext<AppDbContextCosmos>(op => op.UseCosmos(cosmos.Uri, cosmos.Key, cosmos.DatabaseName));
             return services;
         }
 
