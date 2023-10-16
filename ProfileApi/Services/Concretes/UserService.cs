@@ -8,11 +8,11 @@ namespace ProfileApi.Services.Concretes
 {
     public class UserService : IUserService
     {
-        private readonly AppDbContextCosmos _context;
-        //private readonly AppDbContext _context;
+        
+        private readonly AppDbContext _context;
         private readonly IStorageManager _storageManager;
 
-        public UserService(AppDbContextCosmos context, IStorageManager storageManager)
+        public UserService(AppDbContext context, IStorageManager storageManager)
         {
             _context = context;
             _storageManager = storageManager;

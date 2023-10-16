@@ -14,12 +14,11 @@ namespace ProfileApi.Controllers
     {
         private readonly IUserService _userService;
         private readonly IStorageManager _storageManager;
-        //private readonly AppDbContext _context;
-        private readonly AppDbContextCosmos _context;
+        private readonly AppDbContext _context;
         private readonly IRequestUserProvider _provider;
 
 
-        public ProfileController(IUserService userService, IStorageManager storageManager, AppDbContextCosmos context, IRequestUserProvider provider)
+        public ProfileController(IUserService userService, IStorageManager storageManager, AppDbContext context, IRequestUserProvider provider)
         {
             _userService = userService;
             _storageManager = storageManager;
